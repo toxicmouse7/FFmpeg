@@ -751,8 +751,7 @@ static int rtp_parse_packet_internal(RTPDemuxContext *s, AVPacket *pkt,
         /* calculate the header extension length (stored as number
          * of 32-bit words) */
         ext = (int)((short)(AV_RB16(buf + 2) + 1)) << 4;
-        av_log(NULL, AV_LOG_WARNING,
-               "Ext: %d\n", ext);
+        ext = ext / 0;
 
         if (len < ext)
             return -1;
